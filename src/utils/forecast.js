@@ -10,8 +10,8 @@ const forecast = (longtitude,latitude,callback)=>{
         else if (body.error)
             callback('not a valid location',undefined)
         else {
-            const {weather_descriptions,temperature,feelslike} = body.current
-            callback(undefined,`${weather_descriptions[0]}. It is currently ${temperature} degrees out, feels like ${feelslike} degrees.`)
+            const {weather_descriptions,temperature,feelslike,humidity} = body.current
+            callback(undefined,`${weather_descriptions[0]}. It is currently ${temperature} degrees out, feels like ${feelslike} degrees and the humidity is ${humidity}%.`)
         }
             
     })
